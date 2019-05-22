@@ -14,7 +14,7 @@ import com.wha.hbm.model.Compte;
 public class CompteServiceImpl implements CompteService {
 	
 	@Autowired
-    private CompteDAO compteDAO;
+    private CompteDAO compteDAO;  
  
     public void setCompteDAO(CompteDAO compteDAO) {
         this.compteDAO = compteDAO;

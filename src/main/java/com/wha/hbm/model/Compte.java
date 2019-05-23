@@ -17,6 +17,7 @@ public class Compte implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="compte_id")
 	private int compteId;
 

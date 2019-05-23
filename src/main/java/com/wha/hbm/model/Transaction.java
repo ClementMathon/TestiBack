@@ -47,7 +47,7 @@ public class Transaction {
 		}
 
 
-		public void setIdTransaction(long idTransaction) {
+		public void setIdTransaction(int idTransaction) {
 			this.idTransaction = idTransaction;
 		}
 

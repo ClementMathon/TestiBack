@@ -1,8 +1,16 @@
 package com.wha.hbm.model;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.mysql.fabric.xmlrpc.Client;
 
 
 /**
@@ -44,7 +52,7 @@ public class Conseiller implements Serializable {
 
 	//bi-directional many-to-one association to Client
 	@OneToMany(mappedBy="conseiller")
-	private List<Client> clients;
+	private List<Clients> clients;
 
 	public Conseiller() {
 	}
@@ -121,22 +129,22 @@ public class Conseiller implements Serializable {
 		this.consVille = consVille;
 	}
 
-	public List<Client> getClients() {
+	public List<Clients> getClients() {
 		return this.clients;
 	}
 
-	public void setClients(List<Client> clients) {
+	public void setClients(List<Clients> clients) {
 		this.clients = clients;
 	}
 
-	public Client addClient(Client client) {
+	public Clients addClient(Clients client) {
 		getClients().add(client);
 		client.setConseiller(this);
 
 		return client;
 	}
 
-	public Client removeClient(Client client) {
+	public Clients removeClient(Clients client) {
 		getClients().remove(client);
 		client.setConseiller(null);
 

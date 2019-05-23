@@ -31,10 +31,11 @@ public class Compte implements Serializable {
 	private byte compteType;
 
 	//bi-directional many-to-one association to Client
+	
 	@ManyToOne
 	@JoinColumn(name="client_id")
 	@JsonIgnore
-	private Client client;
+	private Clients client;
 
 	public Compte() {
 	}
@@ -79,11 +80,11 @@ public class Compte implements Serializable {
 		this.compteType = compteType;
 	}
 
-	public Client getClient() {
+	public Clients getClient() {
 		return this.client;
 	}
 
-	public void setClient(Client client) {
+	public void setClient(Clients client) {
 		this.client = client;
 	}
 

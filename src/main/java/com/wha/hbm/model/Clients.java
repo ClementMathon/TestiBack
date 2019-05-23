@@ -2,6 +2,9 @@ package com.wha.hbm.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 
@@ -11,8 +14,8 @@ import java.util.List;
  */
 @Entity
 @Table(name="clients")
-@NamedQuery(name="Client.findAll", query="SELECT c FROM Client c")
-public class Client implements Serializable {
+@NamedQuery(name="Client.findAll", query="SELECT c FROM Clients c")
+public class Clients implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -49,15 +52,17 @@ public class Client implements Serializable {
 	private String clientVille;
 
 	//bi-directional many-to-one association to Conseiller
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="cons_id")
 	private Conseiller conseiller;
 
 	//bi-directional many-to-one association to Compte
+	@JsonIgnore
 	@OneToMany(mappedBy="client")
 	private List<Compte> comptes;
 
-	public Client() {
+	public Clients() {
 	}
 
 	public int getClientId() {

@@ -57,6 +57,10 @@ public class Client implements Serializable {
 	@OneToMany(mappedBy="client")
 	private List<Compte> comptes;
 
+	@OneToOne(mappedBy = "client")
+	@JoinColumn(name = "client_id")
+	private ClientAuth clientAuth;
+	
 	public Client() {
 	}
 

@@ -24,7 +24,6 @@ public class CompteServiceImpl implements CompteService {
     @Transactional
     public void updateCompte(Compte compte) {
         compteDAO.updateCompte(compte);
-        //return this.compteDAO.findCompteById(1);
     }
     
     @Transactional

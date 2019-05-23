@@ -9,28 +9,28 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
  @Entity
- @Table(name="operations_bancaire")
-public class OPBancaire {
+ @Table(name="transactions")
+public class Transaction {
 		private static final long serialVersionUID = 1L;
 
 		@Id
-		@Column(name="id_op")
-		private long IDOP;
+		@Column(name="id_transaction")
+		private long idTransaction;
 		
-		@Column(name="montant_op")
-		private double montantOP;
+		@Column(name="montant_transaction")
+		private double montantTransaction;
 		
-		@Column(name="date_op")
-		private Date dateOP;
+		@Column(name="date_transaction")
+		private Date dateTransaction;
 
-		@Column(name="type_op")
-		private String typeOP;
+		@Column(name="type_transaction")
+		private String typeTransaction;
 
-		@Column(name="libelle_op")
-		private String libelleOP;
+		@Column(name="libelle_transaction")
+		private String libelleTransaction;
 
-		@Column(name="compteDest_op")
-		private String compteDestOP;
+		@Column(name="compteDest_transaction")
+		private String compteDestTransaction;
 
 
 		//bi-directional many-to-one association to Client
@@ -39,63 +39,63 @@ public class OPBancaire {
 		private Compte compte;
 
 		//Getters setters
-		public long getIDOP() {
-			return IDOP;
+		public long getIdTransaction() {
+			return idTransaction;
 		}
 
 
-		public void setIDOP(long iDOP) {
-			IDOP = iDOP;
+		public void setIdTransaction(long idTransaction) {
+			this.idTransaction = idTransaction;
 		}
 
 
-		public double getMontantOP() {
-			return montantOP;
+		public double getMontantTransaction() {
+			return montantTransaction;
 		}
 
 
-		public void setMontantOP(double montantOP) {
-			this.montantOP = montantOP;
+		public void setMontantTransaction(double montantTransaction) {
+			this.montantTransaction = montantTransaction;
 		}
 
 
-		public Date getDateOP() {
-			return dateOP;
+		public Date getDateTransaction() {
+			return dateTransaction;
 		}
 
 
-		public void setDateOP(Date dateOP) {
-			this.dateOP = dateOP;
+		public void setDateTransaction(Date dateTransaction) {
+			this.dateTransaction = dateTransaction;
 		}
 
 
-		public String getTypeOP() {
-			return typeOP;
+		public String getTypeTransaction() {
+			return typeTransaction;
 		}
 
 
-		public void setTypeOP(String typeOP) {
-			this.typeOP = typeOP;
+		public void setTypeTransaction(String typeTransaction) {
+			this.typeTransaction = typeTransaction;
 		}
 
 
-		public String getLibelleOP() {
-			return libelleOP;
+		public String getLibelleTransaction() {
+			return libelleTransaction;
 		}
 
 
-		public void setLibelleOP(String libelleOP) {
-			this.libelleOP = libelleOP;
+		public void setLibelleTransaction(String libelleTransaction) {
+			this.libelleTransaction = libelleTransaction;
 		}
 
 
-		public String getCompteDestOP() {
-			return compteDestOP;
+		public String getCompteDestTransaction() {
+			return compteDestTransaction;
 		}
 
 
-		public void setCompteDestOP(String compteDestOP) {
-			this.compteDestOP = compteDestOP;
+		public void setCompteDestTransaction(String compteDestTransaction) {
+			this.compteDestTransaction = compteDestTransaction;
 		}
 
 
@@ -108,5 +108,7 @@ public class OPBancaire {
 			this.compte = compte;
 		}
 
+		
+		
 		
 }

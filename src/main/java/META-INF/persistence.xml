@@ -4,6 +4,6 @@
 		<class>com.wha.hbm.model.Client</class>
 		<class>com.wha.hbm.model.Compte</class>
 		<class>com.wha.hbm.model.Conseiller</class>
-		<class>com.wha.hbm.model.OPBancaire</class>
+		<class>com.wha.hbm.model.Transaction</class>
 	</persistence-unit>
 </persistence>

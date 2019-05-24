@@ -27,11 +27,8 @@ public class ClientDAOImpl extends AbstractDao implements ClientDao {
 
     public Clients findClientById(int id) {
 	return (Clients) getSession().get(Clients.class, id);
-	
     }
 
-    
-    
     public void updateClient(Clients client) {
 	getSession().saveOrUpdate(client);
     }
@@ -54,8 +51,9 @@ public class ClientDAOImpl extends AbstractDao implements ClientDao {
 	    session.close();	    
     }
     public List<Clients> findClientsByConseillerId(int conseillerId){
-	return null;
+    	Session session = getSession();
+         
+    	List<Clients> res = (List <Clients>) session.createQuery("select c from Clients c where c.conseiller.consId = :id").setParameter("id", conseillerId).list();
+    	return res;
     }
-
-
 }

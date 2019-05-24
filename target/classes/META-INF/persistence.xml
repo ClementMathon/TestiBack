@@ -3,7 +3,7 @@
 	<persistence-unit name="Testibank">
 		<class>com.wha.hbm.model.Clients</class>
 		<class>com.wha.hbm.model.Compte</class>
-		<class>com.wha.hbm.model.Conseiller</class>
+		<class>com.wha.hbm.model.Conseillers</class>
 		<class>com.wha.hbm.model.Transaction</class>
 	</persistence-unit>
 </persistence>

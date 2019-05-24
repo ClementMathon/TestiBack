@@ -32,7 +32,7 @@ public class ClientController {
 		return new ResponseEntity<Clients>(resultat, HttpStatus.OK);
 	}
 	@RequestMapping(value = "/findbyconseillerid/{id}", method = RequestMethod.GET)
-	public ResponseEntity<List<Clients>> getEmployeeById(@PathVariable int id) {
+	public ResponseEntity<List<Clients>> getClientByConseillerId(@PathVariable int id) {
 	    List<Clients> resultat = service.findClientsByConseillerId(id);
 		return new ResponseEntity<List<Clients>>(resultat, HttpStatus.OK);
 	}

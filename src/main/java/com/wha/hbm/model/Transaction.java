@@ -1,5 +1,6 @@
 package com.wha.hbm.model;
 
+import java.util.Calendar;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.PostPersist;
 import javax.persistence.Table;
 
  @Entity
@@ -20,27 +23,29 @@ public class Transaction {
 		@Column(name="id_transaction")
 		private int idTransaction;
 		
-		@Column(name="montant_transaction")
-		private double montantTransaction;
+		@Column(name="montant_transaction", nullable = false)
+		private float montantTransaction;
 		
-		@Column(name="date_transaction")
+		@Column(name="date_transaction", nullable = false)
 		private Date dateTransaction;
 
-		@Column(name="type_transaction")
+		@Column(name="type_transaction", nullable = false)
 		private String typeTransaction;
 
 		@Column(name="libelle_transaction")
 		private String libelleTransaction;
 
-		@Column(name="compteDest_transaction")
-		private String compteDestTransaction;
+		@OneToOne
+		private Compte compteDestTransaction;
 
 
 		//bi-directional many-to-one association to Client
 		@ManyToOne
-		@JoinColumn(name="compte_id")
+		@JoinColumn(name="compte_id", nullable = false)
 		private Compte compte;
 
+	
+		
 		//Getters setters
 		public long getIdTransaction() {
 			return idTransaction;
@@ -52,12 +57,12 @@ public class Transaction {
 		}
 
 
-		public double getMontantTransaction() {
+		public float getMontantTransaction() {
 			return montantTransaction;
 		}
 
 
-		public void setMontantTransaction(double montantTransaction) {
+		public void setMontantTransaction(float montantTransaction) {
 			this.montantTransaction = montantTransaction;
 		}
 
@@ -92,12 +97,15 @@ public class Transaction {
 		}
 
 
-		public String getCompteDestTransaction() {
+		
+
+
+		public Compte getCompteDestTransaction() {
 			return compteDestTransaction;
 		}
 
 
-		public void setCompteDestTransaction(String compteDestTransaction) {
+		public void setCompteDestTransaction(Compte compteDestTransaction) {
 			this.compteDestTransaction = compteDestTransaction;
 		}
 

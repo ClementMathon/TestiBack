@@ -14,7 +14,6 @@ import java.util.List;
  */
 @Entity
 @Table(name="clients")
-@NamedQuery(name="Client.findAll", query="SELECT c FROM Clients c")
 public class Clients implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -58,13 +57,13 @@ public class Clients implements Serializable {
 	@JoinColumn(name="cons_id")
 	private Conseillers conseiller;
 
-	//bi-directional many-to-one association to Compte
-	@JsonIgnore
-	@OneToMany(mappedBy="client")
-	private List<Compte> comptes;
-
-	public Clients() {
-	}
+//	//bi-directional many-to-one association to Compte
+//	@JsonIgnore
+//	@OneToMany
+//	private List<Compte> comptes;
+//
+//	public Clients() {
+//	}
 
 	public int getClientId() {
 		return this.clientId;
@@ -162,26 +161,13 @@ public class Clients implements Serializable {
 		this.conseiller = conseiller;
 	}
 
-	public List<Compte> getComptes() {
-		return this.comptes;
-	}
+//	public List<Compte> getComptes() {
+//		return this.comptes;
+//	}
+//
+//	public void setComptes(List<Compte> comptes) {
+//		this.comptes = comptes;
+//	}
 
-	public void setComptes(List<Compte> comptes) {
-		this.comptes = comptes;
-	}
-
-	public Compte addCompte(Compte compte) {
-		getComptes().add(compte);
-		compte.setClient(this);
-
-		return compte;
-	}
-
-	public Compte removeCompte(Compte compte) {
-		getComptes().remove(compte);
-		compte.setClient(null);
-
-		return compte;
-	}
 
 }

@@ -55,7 +55,7 @@ public class Clients implements Serializable {
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="cons_id")
-	private Conseiller conseiller;
+	private Conseillers conseiller;
 
 	//bi-directional many-to-one association to Compte
 	@JsonIgnore
@@ -153,11 +153,11 @@ public class Clients implements Serializable {
 		this.clientVille = clientVille;
 	}
 
-	public Conseiller getConseiller() {
+	public Conseillers getConseiller() {
 		return this.conseiller;
 	}
 
-	public void setConseiller(Conseiller conseiller) {
+	public void setConseiller(Conseillers conseiller) {
 		this.conseiller = conseiller;
 	}
 

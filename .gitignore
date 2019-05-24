@@ -2,5 +2,5 @@
 database.properties
 
 hello
-target/
+/target/*
 DataConfig.java

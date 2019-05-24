@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wha.hbm.iservice.CompteService;
+import com.wha.hbm.model.Clients;
 import com.wha.hbm.model.Compte;
 
 
@@ -40,8 +41,14 @@ public class CompteController {
 		 compteService.updateCompte(compte);
 	}
 		
-	@RequestMapping(value = "/create", method = RequestMethod.POST)
-	public void createCompte(@RequestBody Compte cpt) {
-		compteService.createCompte(cpt);	
+	@RequestMapping(value = "/create/{idClient}", method = RequestMethod.POST)
+	public void createCompte(@RequestBody Compte cpt, @PathVariable int idClient) {
+		compteService.createCompte(cpt, idClient);	
+	}
+	
+	@RequestMapping(value = "/findAllComptesByClientId/{id}", method = RequestMethod.GET)
+	public ResponseEntity<List<Compte>> getComptesByClientId(@PathVariable int id) {
+	    List<Compte> resultat = compteService.findComptesByClientId(id);
+		return new ResponseEntity<List<Compte>>(resultat, HttpStatus.OK);
 	}
 }

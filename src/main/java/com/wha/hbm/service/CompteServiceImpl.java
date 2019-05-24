@@ -27,8 +27,8 @@ public class CompteServiceImpl implements CompteService {
     }
     
     @Transactional
-    public void createCompte(Compte compte) {
-        compteDAO.addCompte(compte);
+    public void createCompte(Compte compte, int id) {
+        compteDAO.addCompte(compte, id);
     }
     
     @Transactional
@@ -40,7 +40,10 @@ public class CompteServiceImpl implements CompteService {
     public Compte findCompteById(int id) {
         return compteDAO.findCompteById(id);
     }
- 
+    @Transactional
+    public List<Compte> findComptesByClientId(int id) {
+    	return compteDAO.listComptesByClientId(id);
+    };
    
 
 }

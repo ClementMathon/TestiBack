@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wha.hbm.iservice.TransactionService;
+import com.wha.hbm.model.Compte;
 import com.wha.hbm.model.Transaction;
 
 @RestController
@@ -33,13 +34,20 @@ public class TransactionController {
 		return new ResponseEntity<List<Transaction>>(list, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/transactions/delete", method = RequestMethod.DELETE)
-	public void deleteTransaction (@RequestBody Transaction transaction) {
-		 transactionService.deleteTransaction(transaction);
+	@RequestMapping(value = "/transactions/delete/{id}", method = RequestMethod.GET)
+	public void deleteTransaction (@PathVariable int id) {
+		Transaction resultat = transactionService.findTransactionById(id);
+		 transactionService.deleteTransaction(resultat);
 	}
 		
-	@RequestMapping(value = "/transactions/create", method = RequestMethod.POST)
-	public void newTransaction(@RequestBody Transaction transaction) {
-		transactionService.createTransaction(transaction);	
+	@RequestMapping(value = "/transactions/create/{compteId}", method = RequestMethod.POST)
+	public void newTransaction(@RequestBody Transaction transaction, @PathVariable int compteId) {
+		transactionService.createTransaction(transaction, compteId);	
 	}
+	
+	@RequestMapping(value = "/findAllTransactionsByCompteId/{id}", method = RequestMethod.GET)
+	public ResponseEntity<List<Transaction>> getTransactionByCompteId(@PathVariable int id) {
+	    List<Transaction> resultat = transactionService.findAllTransactionsByCompteId(id);
+		return new ResponseEntity<List<Transaction>>(resultat, HttpStatus.OK);
+	} 
 }

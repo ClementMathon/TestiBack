@@ -6,17 +6,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="clientAuth")
+@Table(name = "clientAuth")
 public class ClientAuth {
 
 	@Id
-	@Column(name="clientAuth_id")
+	@Column(name = "clientAuth_id")
 	private int clientAuthId;
-	
-	@Column(name="client_username")
+
+	@Column(name = "client_username")
 	private String username;
-	
-	@Column(name="clientpasword")
+
+	@Column(name = "clientpasword")
 	private String password;
-	
+
 }

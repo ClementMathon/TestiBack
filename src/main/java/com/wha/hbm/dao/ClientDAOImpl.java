@@ -59,4 +59,14 @@ public class ClientDAOImpl implements ClientDAO {
 		return clientListe;
 	}
 
+	public List<Client> NumberClientByConseiller(Conseiller conseiller) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void AffectConseiller(Client client, Conseiller conseiller) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

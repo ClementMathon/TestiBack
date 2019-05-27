@@ -53,15 +53,21 @@ public class Clients implements Serializable {
 	private String clientVille;
 
 	//bi-directional many-to-one association to Conseiller
-	@JsonIgnore
+	//@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="cons_id")
 	private Conseillers conseiller;
 
+	
 	//bi-directional many-to-one association to Compte
 	@JsonIgnore
 	@OneToMany(mappedBy="client")
 	private List<Compte> comptes;
+	
+	@JsonIgnore
+	@OneToOne
+	@JoinColumn(name = "client_id")
+	private ClientAuth clientAuth;
 
 	public Clients() {
 	}

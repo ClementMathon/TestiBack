@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wha.hbm.iservice.CompteService;
-import com.wha.hbm.model.Clients;
 import com.wha.hbm.model.Compte;
 
 
@@ -29,7 +28,7 @@ public class CompteController {
 		Compte resultat = compteService.findCompteById(id); 
 		return new ResponseEntity<Compte>(resultat, HttpStatus.OK);
 	}
-	
+
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	public ResponseEntity<List<Compte>> getAllComptes () {
 		List<Compte> list = compteService.findAllComptes();

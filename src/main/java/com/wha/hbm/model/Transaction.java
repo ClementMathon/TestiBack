@@ -30,7 +30,7 @@ public class Transaction {
 		private Date dateTransaction;
 
 		@Column(name="type_transaction", nullable = false)
-		private String typeTransaction;
+		private int typeTransaction;
 
 		@Column(name="libelle_transaction")
 		private String libelleTransaction;
@@ -77,12 +77,12 @@ public class Transaction {
 		}
 
 
-		public String getTypeTransaction() {
+		public int getTypeTransaction() {
 			return typeTransaction;
 		}
 
 
-		public void setTypeTransaction(String typeTransaction) {
+		public void setTypeTransaction(int typeTransaction) {
 			this.typeTransaction = typeTransaction;
 		}
 

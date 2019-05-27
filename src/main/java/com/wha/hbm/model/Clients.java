@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * The persistent class for the clients database table.
- * 
+ *
  */
 @Entity
 @Table(name="clients")
@@ -52,18 +52,24 @@ public class Clients implements Serializable {
 	private String clientVille;
 
 	//bi-directional many-to-one association to Conseiller
-	@JsonIgnore
+	//@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="cons_id")
 	private Conseillers conseiller;
 
-//	//bi-directional many-to-one association to Compte
-//	@JsonIgnore
-//	@OneToMany
-//	private List<Compte> comptes;
-//
-//	public Clients() {
-//	}
+
+	//bi-directional many-to-one association to Compte
+	@JsonIgnore
+	@OneToMany(mappedBy="client")
+	private List<Compte> comptes;
+
+	@JsonIgnore
+	@OneToOne
+	@JoinColumn(name = "client_id")
+	private ClientAuth clientAuth;
+
+	public Clients() {
+	}
 
 	public int getClientId() {
 		return this.clientId;

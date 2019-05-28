@@ -23,11 +23,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  */
 @Entity
 @Table(name="conseillers")
-  
+
 public class Conseillers  implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
 
-
-     private Integer consId;
+     private int consId;
      private String consDateEmbauche;
      private String consNom;
      private String consPrenom;
@@ -36,105 +36,102 @@ public class Conseillers  implements java.io.Serializable {
      private String consAdresse;
      private int consCp;
      private String consVille;
-   
-
+     
     public Conseillers() {
     }
 
-	
-    public Conseillers(String consDateEmbauche, String consNom, String consPrenom, String consEmail, String consTel, String consAdresse, int consCp, String consVille) {
-        this.consDateEmbauche = consDateEmbauche;
-        this.consNom = consNom;
-        
-        this.consPrenom = consPrenom;
-        this.consEmail = consEmail;
-        this.consTel = consTel;
-        this.consAdresse = consAdresse;
-        this.consCp = consCp;
-        this.consVille = consVille;
-    }
-   
-   
-     @Id @GeneratedValue(strategy=GenerationType.AUTO)
+    /*
+     * public Conseillers(String consDateEmbauche, String consNom, String
+     * consPrenom, String consEmail, String consTel, String consAdresse, int consCp,
+     * String consVille) { this.consDateEmbauche = consDateEmbauche; this.consNom =
+     * consNom;
+     * 
+     * this.consPrenom = consPrenom; this.consEmail = consEmail; this.consTel =
+     * consTel; this.consAdresse = consAdresse; this.consCp = consCp; this.consVille
+     * = consVille; }
+     */
     
-    @Column(name="cons_id", unique=true, nullable=false)
-    public Integer getConsId() {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    
+    @Column(name="cons_Id", unique=true, nullable=false)
+    public int getconsId() {
         return this.consId;
     }
     
-    public void setConsId(Integer consId) {
+    public void setconsId(int consId) {
         this.consId = consId;
     }
     
-    @Column(name="cons_dateEmbauche", nullable=false, length=10)
-    public String getConsDateEmbauche() {
+    @Column(name="cons_DateEmbauche", nullable=true, length=10)
+    public String getconsDateEmbauche() {
         return this.consDateEmbauche;
     }
     
-    public void setConsDateEmbauche(String consDateEmbauche) {
+    public void setconsDateEmbauche(String consDateEmbauche) {
         this.consDateEmbauche = consDateEmbauche;
     }
     
-    @Column(name="cons_nom", nullable=false, length=30)
-    public String getConsNom() {
+    @Column(name="cons_Nom", nullable=true, length=30)
+    public String getconsNom() {
         return this.consNom;
     }
     
-    public void setConsNom(String consNom) {
+    public void setconsNom(String consNom) {
         this.consNom = consNom;
     }
     
-    @Column(name="cons_prenom", nullable=false, length=30)
-    public String getConsPrenom() {
+    @Column(name="cons_Prenom", nullable=true, length=30)
+    public String getconsPrenom() {
         return this.consPrenom;
     }
     
-    public void setConsPrenom(String consPrenom) {
+    public void setconsPrenom(String consPrenom) {
         this.consPrenom = consPrenom;
     }
     
-    @Column(name="cons_email", nullable=false, length=50)
-    public String getConsEmail() {
+    @Column(name="cons_Email", nullable=true, length=50)
+    public String getconsEmail() {
         return this.consEmail;
     }
     
-    public void setConsEmail(String consEmail) {
+    public void setconsEmail(String consEmail) {
         this.consEmail = consEmail;
     }
     
-    @Column(name="cons_tel", nullable=false, length=15)
-    public String getConsTel() {
+    @Column(name="cons_Tel", nullable=true, length=15)
+    public String getconsTel() {
         return this.consTel;
     }
     
-    public void setConsTel(String consTel) {
+    public void setconsTel(String consTel) {
         this.consTel = consTel;
     }
     
-    @Column(name="cons_adresse", nullable=false)
-    public String getConsAdresse() {
+    @Column(name="cons_Adresse", nullable=true)
+    public String getconsAdresse() {
         return this.consAdresse;
     }
     
-    public void setConsAdresse(String consAdresse) {
+    public void setconsAdresse(String consAdresse) {
         this.consAdresse = consAdresse;
     }
     
-    @Column(name="cons_cp", nullable=false)
-    public int getConsCp() {
+    @Column(name="cons_Cp", nullable=true)
+    public int getconsCp() {
         return this.consCp;
     }
     
-    public void setConsCp(int consCp) {
+    public void setconsCp(int consCp) {
         this.consCp = consCp;
     }
     
-    @Column(name="cons_ville", nullable=false, length=30)
-    public String getConsVille() {
+    @Column(name="cons_Ville", nullable=true, length=30)
+    public String getconsVille() {
         return this.consVille;
     }
     
-    public void setConsVille(String consVille) {
+    public void setconsVille(String consVille) {
         this.consVille = consVille;
     }
 

@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@PropertySource("file:/home/specialjcg/mabase/angular/testibak/TestiBack/src/main/resources/database.properties")
+@PropertySource("classpath:database.properties")
 public class DataConfig {
 
 	private final String PROPERTY_DRIVER = "db.driver";

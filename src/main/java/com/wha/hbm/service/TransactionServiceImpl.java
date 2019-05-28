@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.wha.hbm.idao.TransactionDAO;
 import com.wha.hbm.iservice.TransactionService;
+import com.wha.hbm.model.Compte;
 import com.wha.hbm.model.Transaction;
 
 @Service
@@ -21,8 +22,8 @@ public class TransactionServiceImpl implements TransactionService{
         this.transactionDAO = transactionDAO;
     }
 	
-	public void createTransaction(Transaction transaction) {
-		transactionDAO.newTransaction(transaction);
+	public void createTransaction(Transaction transaction, int id) {
+		transactionDAO.newTransaction(transaction, id);
 	}
 
 	public void deleteTransaction(Transaction transaction) {
@@ -35,6 +36,10 @@ public class TransactionServiceImpl implements TransactionService{
 
 	public List<Transaction> findAllTransactions() {
 		return this.transactionDAO.listTransactions();
+	}
+	
+	public List<Transaction> findAllTransactionsByCompteId(int id) {
+		return this.transactionDAO.listTransactionsByCompteId(id);
 	}
 
 }

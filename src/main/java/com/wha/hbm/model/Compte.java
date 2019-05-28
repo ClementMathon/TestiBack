@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  */
 @Entity
 @Table(name="comptes")
-@NamedQuery(name="Compte.findAll", query="SELECT c FROM Compte c")
+
 public class Compte implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -25,16 +25,16 @@ public class Compte implements Serializable {
 
 	private short compte_plafondAutorise;
 
-	@Column(name="compte_solde")
+	@Column(name="compte_solde", nullable = false)
 	private float compteSolde;
 
-	@Column(name="compte_type")
+	@Column(name="compte_type", nullable = false)
 	private byte compteType;
 
 	//bi-directional many-to-one association to Client
 	
 	@ManyToOne
-	@JoinColumn(name="client_id")
+	@JoinColumn(name="client_id", nullable = false)
 	@JsonIgnore
 	private Clients client;
 

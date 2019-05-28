@@ -35,8 +35,5 @@ public class ClientServiceImpl implements ClientService {
     public List<Clients> findClientsByConseillerId(int conseillerId){
 	return dao.findClientsByConseillerId(conseillerId);
     }
-
-
-   
 }
 

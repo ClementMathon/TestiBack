@@ -2,3 +2,8 @@
 /home/specialjcg/mabase/angular/testibak/TestiBack/src/main/java/com/wha/hbm/config/*
 /home/specialjcg/mabase/angular/testibak/TestiBack/pom.xml
 /home/specialjcg/mabase/angular/testibak/TestiBack/src/main/resources/*
+/src/main/resources/database.properties
+/target/*
+/src/main/java/com/wha/hbm/config/*
+/target/
+pom.xml

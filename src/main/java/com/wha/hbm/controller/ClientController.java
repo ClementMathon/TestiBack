@@ -36,13 +36,13 @@ public class ClientController {
 	    List<Clients> resultat = service.findClientsByConseillerId(id);
 		return new ResponseEntity<List<Clients>>(resultat, HttpStatus.OK);
 	}
-	@RequestMapping(value = "/createclient", method = RequestMethod.POST)
+	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public void createClient(@RequestBody Clients cli)
 	{
 	    service.saveClient(cli);
 	  
 	}
-	@RequestMapping(value = "/updateclient", method = RequestMethod.POST)
+	@RequestMapping(value = "/update", method = RequestMethod.PUT)
 	public void updateClient(@RequestBody Clients cli)
 	{
 	    service.updateClient(cli);

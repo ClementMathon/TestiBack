@@ -30,7 +30,7 @@ public class ClientDAOImpl extends AbstractDao implements ClientDao {
     }
 
     public void updateClient(Clients client) {
-	getSession().saveOrUpdate(client);
+	getSession().merge(client);
     }
 
 

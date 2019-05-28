@@ -35,8 +35,7 @@ public class Transaction {
 		@Column(name="libelle_transaction")
 		private String libelleTransaction;
 
-		@OneToOne
-		private Compte compteDestTransaction;
+		private int compteDestTransaction;
 
 
 		//bi-directional many-to-one association to Client
@@ -100,12 +99,12 @@ public class Transaction {
 		
 
 
-		public Compte getCompteDestTransaction() {
+		public int getCompteDestTransaction() {
 			return compteDestTransaction;
 		}
 
 
-		public void setCompteDestTransaction(Compte compteDestTransaction) {
+		public void setCompteDestTransaction(int compteDestTransaction) {
 			this.compteDestTransaction = compteDestTransaction;
 		}
 

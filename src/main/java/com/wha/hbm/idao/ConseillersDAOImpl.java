@@ -27,7 +27,7 @@ public class ConseillersDAOImpl implements ConseillersDAO {
    
     public void updateConseillers(Conseillers conseillers) {
         Session session = sessionFactory.getCurrentSession();
-        session.update(conseillers);
+        session.merge(conseillers);
     }
  
     @SuppressWarnings("unchecked")

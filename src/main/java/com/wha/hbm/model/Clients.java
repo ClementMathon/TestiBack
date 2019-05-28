@@ -55,7 +55,7 @@ public class Clients implements Serializable {
 	//bi-directional many-to-one association to Conseiller
 	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name="cons_id")
+	@JoinColumn(name="cons_Id")
 	private Conseillers conseiller;
 
 	//bi-directional many-to-one association to Compte

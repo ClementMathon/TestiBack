@@ -6,6 +6,7 @@
 /home/specialjcg/mabase/angular/testibak/TestiBack/src/main/java/com/wha/hbm/idao/ClientDao.java
 /home/specialjcg/mabase/angular/testibak/TestiBack/src/main/java/com/wha/hbm/model/Clients.java
 /home/specialjcg/mabase/angular/testibak/TestiBack/src/main/java/com/wha/hbm/controller/ConseillersController.java
+/home/specialjcg/mabase/angular/testibak/TestiBack/src/main/java/com/wha/hbm/model/ClientAuth.java
 /home/specialjcg/mabase/angular/testibak/TestiBack/src/main/java/com/wha/hbm/idao/CompteDAO.java
 /home/specialjcg/mabase/angular/testibak/TestiBack/src/main/java/com/wha/hbm/model/Conseillers.java
 /home/specialjcg/mabase/angular/testibak/TestiBack/src/main/java/com/wha/hbm/dao/ClientDAOImpl.java

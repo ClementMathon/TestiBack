@@ -18,6 +18,7 @@ com/wha/hbm/idao/ClientDao.class
 com/wha/hbm/controller/CompteController.class
 com/wha/hbm/model/Transaction.class
 com/wha/hbm/iservice/TransactionService.class
+com/wha/hbm/model/ClientAuth.class
 com/wha/hbm/dao/ClientDAOImpl.class
 com/wha/hbm/dao/TransactionDAOImpl.class
 com/wha/hbm/dao/CompteDAOImpl.class

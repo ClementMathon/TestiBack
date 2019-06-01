@@ -54,8 +54,16 @@ public class ClientDAOImpl extends AbstractDao implements ClientDao {
 	    session.close();	    
     }
     public List<Clients> findClientsByConseillerId(int conseillerId){
-	return null;
+		String req = "from Clients c where cons_Id="+conseillerId;
+		Query q = getSession().createQuery(req);
+		List<Clients> res = (List <Clients>) q.list();
+		return res;
     }
-
+	public int findNumberofClientsByConseillerId(int conseillerId){
+		String req = "from Clients c where cons_Id="+conseillerId;
+		Query q = getSession().createQuery(req);
+		List<Clients> res = (List <Clients>) q.list();
+		return res.size();
+    }
 
 }

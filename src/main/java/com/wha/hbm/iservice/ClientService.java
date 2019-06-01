@@ -19,5 +19,5 @@ public interface ClientService {
 
     // autres methodes
     List<Clients> findClientsByConseillerId(int conseillerID);
-    
+    public int findNumberofClientsByConseillerId(int conseillerId); 
 }

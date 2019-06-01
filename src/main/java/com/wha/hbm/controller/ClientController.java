@@ -36,6 +36,11 @@ public class ClientController {
 	    List<Clients> resultat = service.findClientsByConseillerId(id);
 		return new ResponseEntity<List<Clients>>(resultat, HttpStatus.OK);
 	}
+	@RequestMapping(value = "/findNumberofClientbyconseillerid/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Integer> findNumberofClientsByConseillerId(@PathVariable int id) {
+	    int resultat = service.findNumberofClientsByConseillerId(id);
+		return new ResponseEntity<Integer>(resultat, HttpStatus.OK);
+	}
 	@RequestMapping(value = "/createclient", method = RequestMethod.POST)
 	public void createClient(@RequestBody Clients cli)
 	{

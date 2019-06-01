@@ -17,4 +17,5 @@ public interface ClientDao {
     void deleteClientById(int id);
 
     public List<Clients> findClientsByConseillerId(int conseillerId);
+    public int findNumberofClientsByConseillerId(int conseillerId);
 }

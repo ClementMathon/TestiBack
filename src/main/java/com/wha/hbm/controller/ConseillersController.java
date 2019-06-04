@@ -46,10 +46,7 @@ public class ConseillersController {
     }
  
     @RequestMapping(value = "/conseillersadd", method = RequestMethod.POST)
-    /*@ResponseBody
-     public String postPerson(@RequestBody Integer conseiller) {
-       return "bonjour"+conseiller;
-   }*/
+    
     public void addConseillers(@RequestBody Conseillers conseiller) {
        conseillersService.addConseillers(conseiller);
     
@@ -58,7 +55,7 @@ public class ConseillersController {
     @RequestMapping(value = "/conseillersupdate", method = RequestMethod.POST)
     public void updateConseiller(@RequestBody Conseillers conseiller) {
 
-        conseillersService.updateConseillers(conseiller);
+      conseillersService.updateConseillers(conseiller);
     }
 
     // Same method For both Add and Update Employee

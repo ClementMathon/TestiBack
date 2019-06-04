@@ -3,6 +3,7 @@ package com.wha.hbm.iservice;
 import java.util.List;
 
 import com.wha.hbm.model.Clients;
+import com.wha.hbm.model.Conseillers;
 
 
 
@@ -20,4 +21,6 @@ public interface ClientService {
     // autres methodes
     List<Clients> findClientsByConseillerId(int conseillerID);
     public int findNumberofClientsByConseillerId(int conseillerId); 
-}
+    public List<Clients> findAllClientswithoutconseiller();
+    public void updateClientsByConseillerId(Clients client);}
+

@@ -16,6 +16,22 @@ import java.util.List;
 @Table(name="clients")
 @NamedQuery(name="Client.findAll", query="SELECT c FROM Clients c")
 public class Clients implements Serializable {
+
+	public Clients(int clientId, String clientAdresse, int clientCp, String clientEmail, String clientMdp, int client_nbEnfant, String clientNom, String clientPrenom, String clientSituation, String clientTel, String clientVille, Conseillers conseiller, List<Compte> comptes) {
+		this.clientId = clientId;
+		this.clientAdresse = clientAdresse;
+		this.clientCp = clientCp;
+		this.clientEmail = clientEmail;
+		this.clientMdp = clientMdp;
+		this.client_nbEnfant = client_nbEnfant;
+		this.clientNom = clientNom;
+		this.clientPrenom = clientPrenom;
+		this.clientSituation = clientSituation;
+		this.clientTel = clientTel;
+		this.clientVille = clientVille;
+		this.conseiller = conseiller;
+		this.comptes = comptes;
+	}
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -158,10 +174,10 @@ public class Clients implements Serializable {
 		return this.conseiller;
 	}
 
-	public void setConseiller(Conseillers conseiller) {
-		this.conseiller = conseiller;
+	public void setConseiller(Conseillers conseiller2) {
+		this.conseiller = conseiller2;
 	}
-
+	
 	public List<Compte> getComptes() {
 		return this.comptes;
 	}

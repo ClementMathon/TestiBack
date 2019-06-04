@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.wha.hbm.idao.ClientDao;
 import com.wha.hbm.iservice.ClientService;
 import com.wha.hbm.model.Clients;
+import com.wha.hbm.model.Conseillers;
 
 @Service("clientService")
 @Transactional
@@ -23,6 +24,10 @@ public class ClientServiceImpl implements ClientService {
     public List<Clients> findAllClients() {
 	return dao.findAllClients();
     }
+   
+    public List<Clients> findAllClientswithoutconseiller() {
+	return dao.findAllClientswithoutconseiller();
+    }
     public Clients findClientById(int id){
 	return dao.findClientById(id);
     }
@@ -36,10 +41,13 @@ public class ClientServiceImpl implements ClientService {
 	return dao.findClientsByConseillerId(conseillerId);
     }
     public int findNumberofClientsByConseillerId(int conseillerId){
-	return dao.findNumberofClientsByConseillerId(conseillerId);
+    return dao.findNumberofClientsByConseillerId(conseillerId);
+    
     }
+public void updateClientsByConseillerId(Clients client){
 
-
-   
+      dao.updateClientsByConseillerId(client);
+    
+    }
 }
 

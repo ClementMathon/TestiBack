@@ -25,6 +25,18 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name="conseillers")
 
 public class Conseillers  implements java.io.Serializable {
+
+    public Conseillers(int consId, String consDateEmbauche, String consNom, String consPrenom, String consEmail, String consTel, String consAdresse, int consCp, String consVille) {
+        this.consId = consId;
+        this.consDateEmbauche = consDateEmbauche;
+        this.consNom = consNom;
+        this.consPrenom = consPrenom;
+        this.consEmail = consEmail;
+        this.consTel = consTel;
+        this.consAdresse = consAdresse;
+        this.consCp = consCp;
+        this.consVille = consVille;
+    }
     private static final long serialVersionUID = 1L;
 
      private int consId;

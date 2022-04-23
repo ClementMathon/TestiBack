@@ -9,7 +9,7 @@
 	<name>Testibank</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<spring.framework>4.0.6.RELEASE</spring.framework>
+		<spring.framework>5.3.19</spring.framework>
 		<hibernate.manager>4.3.6.Final</hibernate.manager>
 		<joda-time.version>2.3</joda-time.version>
 		<mysql.version>5.1.31</mysql.version>

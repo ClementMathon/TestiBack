@@ -13,7 +13,7 @@
 		<hibernate.manager>4.3.6.Final</hibernate.manager>
 		<joda-time.version>2.3</joda-time.version>
 		<mysql.version>5.1.31</mysql.version>
-		<spring.data>1.3.4.RELEASE</spring.data>
+		<spring.data>1.11.23.RELEASE</spring.data>
 		 <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
